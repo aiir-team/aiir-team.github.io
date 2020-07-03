@@ -20,7 +20,7 @@
     <div class="sidebar_wrapper">
         {% for tag in site.tags %}
         {% assign tag_name = tag[0] %}
-        <a class="badge badge-danger" href="/blog/archives.html">
+        <a class="badge badge-danger" href="/blog/archives/tags.html?tag={{tag_name|slugify|strip}}">
             {{ tag_name | capitalize | replace: "-", " " }} ({{site.tags[tag_name].size}})
         </a>
         {% endfor %}
@@ -34,7 +34,7 @@
     <div class="sidebar_wrapper">
         {% for category in site.categories %}
         {% assign cate_name = category[0] %}
-        <a class="badge badge-info" href="/blog/archives.html">
+        <a class="badge badge-info" href="/blog/archives/categories.html?category={{cate_name|slugify|strip}}">
             {{ cate_name | capitalize | replace: "-", " " }} ({{site.categories[cate_name].size}})
         </a>
         {% endfor %}

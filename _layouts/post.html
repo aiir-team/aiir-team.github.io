@@ -37,7 +37,7 @@ layout: default_blog
         <div class="post_tags">
           <span class="post_tag_title"><i class="fa fa-tags"></i></span>
           {% for tag in page.tags %}
-          <a class="text" href="/blog/archives.html">{{tag}}</a>
+          <a class="text" href="/blog/archives/tags.html?tag={{tag|slugify|strip}}">{{tag}}</a>
           {% unless forloop.last %} | {% endunless %}
           {% endfor %}
         </div>
@@ -47,7 +47,7 @@ layout: default_blog
         <div class="post_categories">
           <span class="post_category_title"><i class="fa fa-th-list"></i></span>
           {% for category in page.categories %}
-          <a href="/blog/archives.html">{{category}}</a>
+          <a href="/blog/archives/categories.html?category={{category|slugify|strip}}">{{category}}</a>
           {% unless forloop.last %} | {% endunless %}
           {% endfor %}
         </div>
