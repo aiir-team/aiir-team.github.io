@@ -1,0 +1,58 @@
+---
+layout: default_blog
+permalink: /blog/archives/tags.html
+---
+
+{% assign tags = site.tags %}
+<h3 id="message_wrapper"></h3>
+<ul id="archive_wrapper" style="padding: 0">
+    {% for tag in tags %}
+    {% assign tag_name = tag[0] %}
+    <li style="list-style: none">
+        <h3 class="tag_name">{{tag_name | capitalize}}</h3>
+        {% assign sorted_posts = site.posts | where: "tags", tag_name %}
+        {%- assign groupedByYear = sorted_posts | group_by_exp:"post", "post.date | date:'%Y' " -%}
+        <ul style="padding: 15px;">
+            {%- for yearitem in groupedByYear -%}
+            <li style="list-style: none"><div style="font-weight: bold; font-size: 18px;">{{ yearitem.name }}</div>
+                <ul style="padding-left: 15px;">
+                    {%- for item in yearitem.items -%}
+                    <li style="list-style: none; border-bottom: 1px dashed gray;margin-bottom: 15px;">
+                        <div style="width: 10%;display: inline-block;">
+                            {{ item.date | date:'%B %e'}}
+                        </div>
+                        <div style=" display: inline-block;width: 80%;">
+                            <a href="{{ item.url }}">{{ item.title }}</a>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </li>
+            {% endfor %}
+        </ul>
+    </li>
+    {% endfor %}
+</ul>
+
+<script>
+    let url = new URL(window.location.href);
+    let c = url.searchParams.get("tag");
+    if (c != null && c.toString().trim() !== "") {
+        let c_exist = false
+        let childNodes = document.getElementById('archive_wrapper').childNodes;
+        for (let i = 0; i < childNodes.length; i++) {
+            if (childNodes[i].nodeType !== 3) { // nodeType 3 is a text node
+                let h3_value = childNodes[i].children[0].innerHTML.toString().toLowerCase();
+                if (h3_value !== c) {
+                    childNodes[i].className = "display_none";
+                } else {
+                    c_exist = true
+                }
+            }
+        }
+        if (c_exist === false) {
+            document.getElementById("message_wrapper").innerHTML = "There is no post for tag: " + c
+        }
+    }
+
+</script>
