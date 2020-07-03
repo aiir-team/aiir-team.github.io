@@ -6,7 +6,7 @@ tags: [it, programmer]
 categories: [life]
 ---
 
-## Testing LamTo.
+### Testing LamTo.
 Hôm qua, Sư Phụ hẹn tôi lên nói chuyện về dự định đồ án cũng như nghiên cứu. Đồ án thì xong từ thời cổ lỗ sĩ rồi, chủ yếu là công việc nghiên cứu. Ngoài ra cũng có mấy cậu sv năm cuối được hẹn lên gặp để làm đồ án tốt nghiệp. Qua cuộc nói chuyện giữa Sư Phụ và các cậu sv đó, Sư Phụ đã chỉ ra 2 sai lầm của mọi người về mặt tư tưởng rằng:
 AI/Machine Learning cũng chỉ là 1 phần trong 1 kỹ sư thôi, và cũng ko phải là phần cốt lõi tạo nên chất của kỹ sư đó! Đừng vì nó hot mà cố tìm cách sử dụng nó để tạo ra thứ mà ko ai cần!
 Kỹ sư ko phải loại người mà hầu hết xã hội (thị trường lao động) đang nghĩ! Quá lạm dụng từ "kỹ sư" đẫn đến xã hội hiểu và đánh giá sai vai trò của 1 người thực sự là kỹ sư.
