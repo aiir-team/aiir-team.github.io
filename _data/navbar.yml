@@ -3,14 +3,14 @@
 - name: Research
   link: /research/
   child:
+    - name: Members
+      link: /research/members.html
     - name: Direction
       link: /research/direction.html
     - name: Projects
       link: /research/projects.html
     - name: Open-source Tools
       link: /research/open-source-tools.html
-- name: Members
-  link: /members.html
 - name: Archives
   link: /blog/archives.html
 - name: RSS

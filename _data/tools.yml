@@ -3,13 +3,13 @@
     - name: Jiffy
       languages: Shell, Dockerfile
       technology: RabbitMQ Server
-      link_icon: /assets/img/members/thieunguyen5991.jpg
+      link_icon: /assets/img/tools/docker_container.png
       link_store: /members/thieunguyen5991/cv-web.html
       excerpt: This image will help you build Rabbitq Cluster easyly
     - name: Tinder
       languages: Python, Java, Php
       technology: Android Application
-      link_icon: /assets/img/members/lamto.jpg
+      link_icon: /assets/img/tools/tinder.png
       link_store: /members/lamto/cv-web.html
       excerpt: This image will help you build Rabbitq Cluster easyly
 
