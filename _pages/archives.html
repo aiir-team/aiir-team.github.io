@@ -14,13 +14,13 @@ permalink: /blog/archives.html
             <div class="row">
                 {% for tag in site.tags %}
                     {% assign tag_name = tag[0] %}
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <a class="badge badge-danger" href="/blog/archives.html/">
                             {{ tag_name | capitalize | replace: "-", " " }} ({{site.tags[tag_name].size}})
                         </a>
                         <ul>
                             {% for post in site.tags[tag_name] %}
-                            <li><a href="{{ post.url }}">{{post.title}}</a></li>
+                            <li><a href="{{ post.url }}" class="black_color">{{post.title}}</a></li>
                             {% endfor %}
                         </ul>
                     </div>
@@ -37,14 +37,13 @@ permalink: /blog/archives.html
             <div class="row">
                 {% for category in site.categories %}
                 {% assign category_name = category[0] %}
-                <div class="col-lg-6">
-                    <a href="/blog/archives.html" class="btn btn-info">
-                        {{ category_name | capitalize | replace: "-", " " }}
-                        <span class="badge badge-light">{{site.categories[category_name].size}}</span>
+                <div class="col-lg-12">
+                    <a class="badge badge-info" href="/blog/archives.html/">
+                        {{ category_name | capitalize | replace: "-", " " }} ({{site.categories[category_name].size}})
                     </a>
                     <ul>
                         {% for post in site.categories[category_name] %}
-                            <li><a href="{{ post.url }}">{{post.title}}</a></li>
+                            <li><a href="{{ post.url }}" class="black_color">{{post.title}}</a></li>
                         {% endfor %}
                     </ul>
                 </div>

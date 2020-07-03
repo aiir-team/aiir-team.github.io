@@ -6,6 +6,10 @@ body {
 	display: none;
 }
 
+.black_color {
+	color: rgba(29, 35, 40, 0.89);
+}
+
 .center_image {
 	margin: 0 auto;
 	display: block;
@@ -35,6 +39,9 @@ canvas {
 
 		#main_post {
 			.author_header {
+				h3 {
+					font-size: 18px;
+				}
 				padding: 15px;
 
 				.author_icon > img {
@@ -87,8 +94,8 @@ canvas {
 				padding-top: 15px;
 
 				.article_title {
-					font-size: 25px;
-					color: #24b80a;
+					font-size: 24px;
+					color: black;
 					border-bottom: 1px dashed;
 					display: inline-block;
 				}
@@ -120,7 +127,9 @@ canvas {
 
 	#right_sidebar_wrapper {
 		margin-bottom: 20px;
-
+		h3 {
+			font-size: 18px;
+		}
 		.sidebar_block {
 			padding: 15px;
 			background: white;
