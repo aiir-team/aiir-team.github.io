@@ -1,0 +1,26 @@
+---
+layout: default_blog
+permalink: /blog/category/:name/
+---
+<div id="main_post">
+    <div class="row">
+        <div class="col-12">
+            {% assign category_name = page.url | split: "/" | last %}
+            <h4>Archive of posts by category:
+                <span class="badge badge-primary">
+                    {{ category_name }}
+                    <span class="badge badge-light">{{site.categories[category_name].size}}</span>
+                </span>
+            </h4>
+
+            <div class="row">
+                {% for post in site.categories[category_name] %}
+                <div class="col-lg-6">
+                    {{forloop.index}}) <a href="{{ post.url }}">{{post.title}}</a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,70 @@
+---
+layout: default_blog
+---
+
+<div id="main_post">
+  <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+    <header class="post_header">
+      <h3 class="post_title" itemprop="name headline">{{ page.title | escape }}</h3>
+      <p class="post_date_author">
+        {%- assign date_format = site.minima.date_format | default: "%b %-d, %Y" -%}
+        <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">
+          {{ page.date | date: date_format }}
+        </time>
+        {%- if page.modified_date -%}
+        ~
+        {%- assign mdate = page.modified_date | date_to_xmlschema -%}
+        <time class="dt-modified" datetime="{{ mdate }}" itemprop="dateModified">
+          {{ mdate | date: date_format }}
+        </time>
+        {%- endif -%}
+
+        {% for page_author in page.author %}
+        {% assign author = site.authors | where: 'short_name', page_author | first %}
+        {% if author %}
+        - <a itemprop="author" itemscope itemtype="http://schema.org/Person"
+             href="/blog/{{ author.url | split: '/' | last }}">
+        <span class="p-author h-card" itemprop="name">{{ author.name }}</span>
+      </a>
+        {% endif %}
+        {% endfor %}
+      </p>
+
+      <div class="post_tags_categories">
+
+        {% if page.tags.size != 0 %}
+        <div class="post_tags">
+          <span class="post_tag_title"><i class="fa fa-tags"></i></span>
+          {% for tag in page.tags %}
+          <a class="text" href="/blog/archives.html">{{tag}}</a>
+          {% unless forloop.last %} | {% endunless %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+        {% if page.categories.size != 0 %}
+        <div class="post_categories">
+          <span class="post_category_title"><i class="fa fa-th-list"></i></span>
+          {% for category in page.categories %}
+          <a href="/blog/archives.html">{{category}}</a>
+          {% unless forloop.last %} | {% endunless %}
+          {% endfor %}
+        </div>
+        {% endif %}
+
+      </div>
+    </header>
+
+    <div class="post_content" itemprop="articleBody">
+      {{ content }}
+    </div>
+
+    {%- if site.disqus.shortname -%}
+    {%- include disqus_comments.html -%}
+    {%- endif -%}
+
+    <a class="u-url" href="{{ page.url | relative_url }}" hidden></a>
+  </article>
+</div>
+

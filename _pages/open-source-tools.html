@@ -1,0 +1,64 @@
+---
+layout: default_blog
+title: Open-source Tools
+permalink: /research/open-source-tools.html
+---
+
+<!-- Latest compiled and minified CSS -->
+<style rel="stylesheet">
+    .card_img_top {
+        width: 100%;
+        height: 30vh;
+        object-fit: cover;
+    }
+    .text-wrap {
+        font-size: 13px;
+    }
+    .tool_name{
+        font-size: 20px;
+        margin-bottom: 0;
+    }
+</style>
+
+<div id="main_post">
+
+    <div id="page_wrapper">
+        {% assign group = site.data.tools %}
+        {% for tools in group %}
+        <div class="article_block">
+            <div class="article_header">
+                <h1 class="article_title">{{ tools.title | escape }}</h1>
+            </div>
+            <div class="article_container">
+                <ul class="list-unstyled row">
+                    {% for tool in tools.values %}
+                    <li class="col-12 col-sm-6 col-md-6 col-lg-4">
+                        <div class="card-body" style="padding: 0">
+                            <a href="{{ tool.link_store }}">
+                                <img class="card_img_top rounded img-thumbnail"
+                                     src="{{tool.link_icon}}"
+                                     width="80%" />
+                            </a>
+                            <p class="text-left tool_name">
+                                <a href="{{ tool.link_store}}"> {{ tool.name }} | {{tool.technology}} </a>
+                            </p>
+                            <p class="meta badge badge-primary text-wrap">{{ tool.languages}} </p>
+                            <p class="meta">
+                                {{tool.excerpt}}
+                            </p>
+                        </div>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+
+
+
+
+
+

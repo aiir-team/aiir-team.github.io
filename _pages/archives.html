@@ -1,0 +1,56 @@
+---
+layout: default_blog
+title: Archives Blog
+permalink: /blog/archives.html
+---
+
+<div id="main_post">
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Archive of posts by Tags</h3>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                {% for tag in site.tags %}
+                    {% assign tag_name = tag[0] %}
+                    <div class="col-lg-6">
+                        <a class="badge badge-danger" href="/blog/archives.html/">
+                            {{ tag_name | capitalize | replace: "-", " " }} ({{site.tags[tag_name].size}})
+                        </a>
+                        <ul>
+                            {% for post in site.tags[tag_name] %}
+                            <li><a href="{{ post.url }}">{{post.title}}</a></li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-12">
+            <h3>Archive of posts by Categories</h3>
+        </div>
+        <div class="col-12">
+            <div class="row">
+                {% for category in site.categories %}
+                {% assign category_name = category[0] %}
+                <div class="col-lg-6">
+                    <a href="/blog/archives.html" class="btn btn-info">
+                        {{ category_name | capitalize | replace: "-", " " }}
+                        <span class="badge badge-light">{{site.categories[category_name].size}}</span>
+                    </a>
+                    <ul>
+                        {% for post in site.categories[category_name] %}
+                            <li><a href="{{ post.url }}">{{post.title}}</a></li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</div>

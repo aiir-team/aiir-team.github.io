@@ -1,0 +1,167 @@
+---
+layout: default_blog
+title: Blog
+permalink: /blog.html
+---
+
+<div id="main_post">
+    <div id="main_post_contributor">
+        <div class="row">
+            <div class="col-12 col-md-6">
+                <div class="contributors_wrapper">
+                    <div class="contributors_header">
+                        <h3>Top Contributors</h3>
+                    </div>
+                    <div class="contributors_block">
+                        <canvas id="canvas_contributors"></canvas>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6">
+                <div class="categories_wrapper">
+                    <div class="categories_header">
+                        <h3>Top Categories</h3>
+                    </div>
+                </div>
+                <div class="categories_block">
+                    <canvas id="canvas_categories"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="main_post_latest">
+        <div class="row">
+            <div class="col-12">
+                <h3>Latest Posts</h3>
+                <ul>
+                    {% for post in site.posts %}
+                    <li>
+                        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                        {{ post.excerpt }}
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<script>
+    var list_top_categories = [];
+    var list_tags_name = [];
+    var list_tags_number = [];
+    var list_authors_name = [];
+    var list_authors_number = [];
+    var total_posts = "{{ site.posts.size }}"
+    var total_categories = "{{site.categories.size}}"
+</script>
+
+
+{% assign categories_list = site.categories %}
+{% for category in categories_list %}
+<script>
+    list_top_categories.push({
+        "name": "{{ category[0] | capitalize }}",
+        "value": "{{ category[1].size }}"
+    })
+</script>
+{% endfor %}
+
+
+{% for tag in site.tags %}
+{% assign tag_name = tag[0] %}
+<script>
+    list_tags_name.push("{{ tag_name | capitalize | replace: '-', ' ' }}");
+    list_tags_number.push('{{site.tags[tag_name].size}}');
+</script>
+{% endfor %}
+
+
+
+{% assign top_authors = site.posts | group_by: 'author' | sort: 'size' | reverse | limit: 2 %}
+{% for author in top_authors %}
+<script>
+    list_authors_name.push("{{author.name}}")
+    list_authors_number.push("{{author.size}}")
+</script>
+{% endfor %}
+
+
+<script>
+    list_top_categories.sort((a, b) => (a.value > b.value) ? -1 : (a.value === b.value) ? ((a.value > b.value) ? -1 : 1) : 1 )
+    list_top_categories.slice(0,2)
+    others_categories = total_posts - list_top_categories[0]["value"] - list_top_categories[1]["value"]
+    others_posts = total_posts - list_authors_number[0] - list_authors_number[1]
+
+    var barChart_contributors = {
+        datasets: [
+            {
+            label: list_authors_name[0],
+            backgroundColor: window.chartColors.red,
+            stack: 'Stack 0',
+            data: [list_authors_number[0],]
+        }, {
+            label: list_authors_name[1],
+            backgroundColor: window.chartColors.blue,
+            stack: 'Stack 1',
+            data: [list_authors_number[1],]
+        }, {
+            label: "Others",
+            backgroundColor: window.chartColors.green,
+            stack: 'Stack 2',
+            data: [others_posts]
+        }]
+    };
+    var config_categories = {
+        type: 'pie',
+        data: {
+            datasets: [{
+                data: [list_top_categories[0]["value"], list_top_categories[1]["value"], others_categories],
+                backgroundColor: [
+                    window.chartColors.red,
+                    window.chartColors.green,
+                    window.chartColors.blue,
+                ],
+                label: 'Top Categories'
+            }],
+            labels: [list_top_categories[0]["name"], list_top_categories[1]["name"], "Others"]
+        },
+        options: {
+            responsive: true
+        }
+    };
+
+    window.onload = function() {
+        var ctx1 = document.getElementById('canvas_contributors').getContext('2d');
+        window.myBar = new Chart(ctx1, {
+            type: 'bar',
+            data: barChart_contributors,
+            options: {
+                title: {
+                    display: true,
+                    text: 'Top Contributors'
+                },
+                tooltips: {
+                    mode: 'index',
+                    intersect: false
+                },
+                responsive: true,
+                scales: {
+                    x: {
+                        stacked: true,
+                    },
+                    y: {
+                        stacked: true
+                    }
+                }
+            }
+        });
+
+        var ctx2 = document.getElementById('canvas_categories').getContext('2d');
+        window.myPie = new Chart(ctx2, config_categories);
+    };
+</script>
+

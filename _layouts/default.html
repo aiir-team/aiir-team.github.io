@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="{{ page.lang | default: site.lang | default: 'en' }}" class="h-100">
+  {%- include head.html -%}
+  {%- include javascript.html -%}
+
+<body class="d-flex flex-column h-100">
+
+<header>
+  {%- include navbar.html -%}
+</header>
+
+<!-- Begin page content -->
+<main role="main" class="flex-shrink-0">
+  <div class="container" id="main_page_content">
+    {{ content }}
+  </div>
+</main>
+
+<footer class="footer mt-auto">
+{%- include footer.html -%}
+</footer>
+<!--{%- include javascript.html -%}-->
+</body>
+</html>

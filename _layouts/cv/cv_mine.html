@@ -1,0 +1,243 @@
+---
+layout: default
+---
+<style rel="stylesheet">
+    #header {
+        margin-top: 30px;
+    }
+    #contact span, #social_networks > span {
+        margin-right: 20px;
+        font-size: 14px;
+    }
+    section {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    section .header .section-title {
+        color: red;
+        padding-top: 10px;
+        border-top: 1px dashed gray;
+        padding-bottom: 10px;
+    }
+    .blockquote {
+        font-size: 16px;
+        background-color: #f1f8ff;
+    }
+
+</style>
+<div id="cv_mine_wrapper">
+    <div id="header">
+        <div class="text-center">
+            <h1 class="name">{{ page.name }}</h1>
+            <h4 class="label">{{ page.position }}</h4>
+        </div>
+
+        <div class="location">
+            <span class="location">{{ page.location.address }}, {{ page.location.postalCode }},
+            {{ page.location.city }} {{ page.location.region }} {{ page.location.countryCode }}
+            </span>
+        </div>
+
+        <div id="contact">
+            {% for item in page.contact %}
+            <span>
+                <i class=" fa {{item.icon}}"></i>
+                <a target="_blank" href="http://{{item.text}}">{{item.text}}</a>
+            </span>
+            {% endfor %}
+        </div>
+
+        <div id="social_networks">
+            {% for item in page.social_networks %}
+            <span class="item">
+                <i class="fa {{item.icon}} social"></i>
+                <span class="url">
+                    <a target="_blank" href="http://{{item.link}}">{{item.link}}</a>
+                </span>
+            </span>
+            {% endfor %}
+        </div>
+
+    </div>
+
+    <section id="overview_block">
+        <blockquote class="blockquote text-center">
+            <p class="mb-0"><p>{{page.overview}}</p></p>
+            <footer class="blockquote-footer">By <cite title="Source Title">Thieu Nguyen</cite></footer>
+        </blockquote>
+        <div>
+
+        </div>
+    </section>
+
+    <section id="education_block">
+        <div class="header">
+            <h3 class="section-title">Education <span class="item-count">({{page.education.size}})</span></h3>
+        </div>
+
+        <div id="education_container">
+            {% for item in page.education %}
+            <div class="education_item">
+                <div class="row">
+                    <div class="col-12 col-md-9">
+                        <div class="font-weight-bold">
+                            {{item.course}}
+                        </div>
+                        <div class="institution">
+                            {{item.institution}}
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-3 text-right">
+                        <div class="date">
+                            {{item.duration}}
+                        </div>
+                    </div>
+                </div>
+                {% if item.notes %}
+                    <ul>
+                        {% for note in item.notes %}
+                            <li>{{note}}</li>
+                        {% endfor %}
+                    </ul>
+
+                {% endif %}
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+
+
+    <section class="section">
+        <div class="header">
+            <h3 class="section-title">Research Experiences <span class="item-count">({{page.experiences.size}})</span></h3>
+        </div>
+
+        {% for item in page.experiences %}
+        <div class="experiences_item">
+            <input id="work-item-{{ forloop.index }}" type="checkbox" class="toggle-item" checked="checked">
+            <label for="work-item-{{ forloop.index }}"></label>
+
+            <div class="row">
+                <div class="col-12 col-md-9">
+                    <div class="font-weight-bold">
+                        {{item.position}}
+                    </div>
+                    <div class="institution">
+                        <a target="_blank" href="http://{{item.website}}">{{item.company}}</a>
+                    </div>
+                </div>
+                <div class="col-12 col-md-3 text-right">
+                    <div class="date">
+                        {{item.duration}}
+                    </div>
+                </div>
+            </div>
+
+            <div class="highlights">
+                {% if item.highlights %}
+                <div>
+                    {% for highlight in item.highlights %}
+                    <div style="font-style: italic;">{{highlight.name}}</div>
+                        {% if highlight.notes %}
+                            <ul>
+                                {% for note in highlight.notes %}
+                                    <li>{{note}}</li>
+                                {% endfor %}
+                            </ul>
+                        {% endif %}
+
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endfor %}
+
+
+    </section>
+
+    <section class="skills_block">
+        <header>
+            <h2 class="section-title">Skills</h2>
+        </header>
+        <section id="skills">
+            {% for item in page.skills %}
+            <div class="item">
+                <h3 class="name">
+                    {{item.title}}
+                </h3>
+
+                <div class="level {{item.level}}">
+                    <em>{{item.level | upcase}}</em>
+                    <div class="bar"></div>
+                </div>
+                <ul class="keywords">
+                    {% for skill in item.items %}
+                    <li>{{skill}}</li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% endfor %}
+        </section>
+    </section>
+
+    <section class="section">
+        <header>
+            <h2 class="section-title">Projects ({{page.projects.size}})</h2>
+        </header>
+        {% for item in page.projects %}
+        <section id="project">
+            <section class="project-item">
+                <input id="project-item-{{ forloop.index }}" type="checkbox" class="toggle-item" checked="checked">
+                <label for="project-item-{{ forloop.index }}"></label>
+
+                <header>
+                    <div class="header">
+                        <div class="title">
+                            {{item.title}}
+                        </div>
+                        <div class="contribution">
+                            {{item.contribution}}
+                        </div>
+                        <div class="date">
+                            {{item.duration}}
+                        </div>
+                    </div>
+
+                </header>
+
+                <div class="item">
+                    <div class="summary">
+                        <p></p>
+                        <p>{{item.description}}</p>
+                        <p></p>
+                    </div>
+                </div>
+            </section>
+        </section>
+        {% endfor %}
+    </section>
+
+    <section class="section">
+        <header>
+            <h2 class="section-title">Languages ({{page.languages.size}})</h2>
+        </header>
+        <section id="languages">
+            {% for item in page.languages %}
+            <div class="display">
+                <h3 class="language">
+                    {{item.name}}
+                </h3>
+                <div class="item">
+                    <div class="level fluency {{item.proficiency}}">
+                        <em>{{item.proficiency | upcase }}</em>
+                        <div class="bar"></div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </section>
+    </section>
+
+</div>

@@ -1,0 +1,54 @@
+---
+layout: default_blog
+title: Author
+---
+
+<div id="main_post">
+    <div class="author_header">
+        <div class="author_icon">
+            <img class="rounded-circle img-thumbnail float-left z-depth-2" alt="100x100" src="{{page.link_avatar}}"
+                 data-holder-rendered="true">
+        </div>
+        <div class="author_text">
+            <h3>{{ page.name }}</h3>
+            <h6>{{ page.position }}</h6>
+        </div>
+        <div class="author_motto_life col-12 col-lg-8 offset-lg-2 col-md-6 offset-md-3">
+            <blockquote class="blockquote text-center">
+                <p class="mb-0 author_motto_text">{{page.motto_in_life}}</p>
+                <footer class="blockquote-footer">By <cite title="Source Title" class="author_motto_source_author">{{page.name}}</cite></footer>
+            </blockquote>
+            <p></p>
+        </div>
+    </div>
+
+    <div class="author_container">
+        <nav class="d-flex author_nav justify-content-center">
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <a class="nav-item nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Home</a>
+                <a class="nav-item nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Profile</a>
+                <a class="nav-item nav-link" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Contact</a>
+            </div>
+        </nav>
+        <div class="tab-content author_content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+                <h3>All Posts</h3>
+                <ul>
+                    {% assign filtered_posts = site.posts | where: 'author', page.short_name %}
+                    {% for post in filtered_posts %}
+                    <li>
+                        <a href="{{ post.url }}">{{ post.title }}</a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                {%- include {{page.link_profile}} -%}
+            </div>
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                {%- include {{page.link_contact}} -%}
+            </div>
+        </div>
+    </div>
+
+</div>

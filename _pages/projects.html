@@ -1,0 +1,55 @@
+---
+layout: default_blog
+title: Projects
+permalink: /research/projects.html
+show: True
+
+projects:
+  - name: Project A
+    authors:
+      - title: Core Members
+        values: Nguyen Van A, Nguyen Van B, Nguyen Van C
+      - title: Outside Collaborators
+        values: Prof. Green Arrow, Prof. Deathstroke
+    abstract: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci cum deserunt dolorem dolores enim facilis inventore labore, necessitatibus porro possimus praesentium quia quis quos, similique sint sunt unde, voluptatibus voluptatum.
+
+  - name: Project B
+    authors:
+      - title: Core Members
+        values: Nguyen Van D, Nguyen Van E, Nguyen Van F
+      - title: Outside Collaborators
+        values: Prof. Batman, Prof. Joker
+    abstract: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores consectetur deserunt, ea esse fugiat itaque placeat quo repudiandae, sit temporibus unde vel? Delectus dolorem fugiat id quisquam quos sunt veniam?
+
+  - name: Project C
+    authors:
+      - title: Core Members
+        values: Nguyen Van G, Nguyen Van H, Nguyen Van Q
+      - title: Outside Collaborators
+        values: Prof. Green Arrow, Prof. Batman
+    abstract: |
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci excepturi ipsam minima perspiciatis quasi quia repellat tenetur? A aliquam asperiores, aut enim nam quam quis. Accusamus quae sequi sint unde.
+---
+
+<div id="main_post">
+    <h3>Our projects</h3>
+    {% if page.projects and page.show %}
+    <ol>
+        {% for project in page.projects %}
+        <li>{{project.name | capitalize}}
+            <ul>
+                {% for author in project.authors %}
+                <li>{{author.title}}: {{author.values}}</li>
+                {% endfor %}
+            </ul>
+            {% if project.abstract %}
+            <p class="abstract badge badge-secondary text-wrap">{{project.abstract}}</p>
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ol>
+    {% endif %}
+
+</div>

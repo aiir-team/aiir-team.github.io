@@ -1,0 +1,59 @@
+<div id="right_sidebar">
+    <div class="sidebar_block">
+        <div class="sidebar_title">
+            <h3>Related Posts</h3>
+        </div>
+        <div class="sidebar_wrapper">
+            <ul>
+                {% for post in site.posts limit:5 %}
+                <li>
+                    <h6><a href="{{ post.url }}">{{ post.title }}</a></h6>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+
+    <div class="sidebar_block">
+        <div class="sidebar_title">
+            <h3>All Tags</h3>
+        </div>
+        <div class="sidebar_wrapper">
+            {% for tag in site.tags %}
+            {% assign tag_name = tag[0] %}
+                <a class="badge badge-danger" href="/blog/archives.html">
+                    {{ tag_name | capitalize | replace: "-", " " }} ({{site.tags[tag_name].size}})
+                </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="sidebar_block">
+        <div class="sidebar_title">
+            <h3>All Categories</h3>
+        </div>
+        <div class="sidebar_wrapper">
+            {% for category in site.categories %}
+            {% assign cate_name = category[0] %}
+            <a class="badge badge-danger" href="/blog/archives.html">
+                {{ cate_name | capitalize | replace: "-", " " }} ({{site.categories[cate_name].size}})
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="sidebar_block">
+        <div class="sidebar_title">
+            <h3>Latest Posts</h3>
+        </div>
+        <div class="sidebar_wrapper">
+            <ul>
+                {% for post in site.posts limit:5 %}
+                <li>
+                    <h6><a href="{{ post.url }}">{{ post.title }}</a></h6>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>

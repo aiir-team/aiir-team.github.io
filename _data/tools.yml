@@ -1,0 +1,31 @@
+- title: Docker Containers
+  values:
+    - name: Jiffy
+      languages: Shell, Dockerfile
+      technology: RabbitMQ Server
+      link_icon: /assets/img/members/thieunguyen5991.jpg
+      link_store: /members/thieunguyen5991/cv-web.html
+      excerpt: This image will help you build Rabbitq Cluster easyly
+    - name: Tinder
+      languages: Python, Java, Php
+      technology: Android Application
+      link_icon: /assets/img/members/lamto.jpg
+      link_store: /members/lamto/cv-web.html
+      excerpt: This image will help you build Rabbitq Cluster easyly
+
+- title: Machine Learning Libraries
+  values:
+    - name: Opfunu
+      languages: Python
+      technology: Python's library
+      link_icon: /assets/img/tools/opfunu.png
+      link_store: http://github.com/thieunguyen5991/opfunu/
+      excerpt: This library written in python include all optimization benchmark functions.
+
+    - name: Mealpy
+      languages: Python
+      technology: Python's library
+      link_icon: /assets/img/tools/mealpy.png
+      link_store: http://github.com/thieunguyen5991/mealpy/
+      excerpt: Python library for the most of cutting-edge population meta-heuristic algorithms.
+

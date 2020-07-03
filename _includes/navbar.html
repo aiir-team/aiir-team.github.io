@@ -1,0 +1,39 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="/">AIIR Group</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+        <ul class="navbar-nav">
+            {% for item in site.data.navbar %}
+                {% if item.child %}
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="{{item.link}}" id="{{item.name}}" role="button"
+                           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            {{item.name}}
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="{{item.name}}">
+                            {% for drop_child in item.child %}
+                                {% if page.url == item.link %}
+                                    <a class="dropdown-item text-white" href="{{drop_child.link}}">{{drop_child.name}}</a>
+                                {% else %}
+                                    <a class="dropdown-item text-black" href="{{drop_child.link}}">{{drop_child.name}}</a>
+                                {% endif %}
+                            {% endfor %}
+                        </div>
+                    </li>
+                {% else %}
+                    <li class="nav-item" >
+                        {% if page.url == item.link %}
+                            <a class="nav-link text-white" href="{{item.link}}"> {{item.name}}</a>
+                        {% else %}
+                            <a class="nav-link text-black" href="{{item.link}}"> {{item.name}}</a>
+                        {% endif %}
+                    </li>
+                {% endif %}
+
+            {% endfor %}
+        </ul>
+    </div>
+</nav>

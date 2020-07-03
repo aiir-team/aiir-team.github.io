@@ -1,0 +1,71 @@
+core_members:
+  - title: Founder Members
+    values:
+      - name: Thieu Nguyen
+        skills: Python, Java, Php
+        link_cv_pdf: /members/thieunguyen5991/cv-pdf.html
+        link_cv_web: /members/thieunguyen5991/cv-web.html
+        link_blog: /blog/thieunguyen5991.html
+        link_icon: /assets/img/members/thieunguyen5991.jpg
+      - name: Lam To
+        skills: Python, Java, Php
+        link_cv_pdf: /members/lamto/cv-pdf.html
+        link_cv_web: /members/lamto/cv-web.html
+        link_blog: /blog/lamto.html
+        link_icon: /assets/img/members/lamto.jpg
+      - name: Duy Hung Nguyen
+        skills: Python, Java, Php
+        link_cv_pdf: /members/duyhungnguyen/cv-pdf.html
+        link_cv_web: /members/duyhungnguyen/cv-web.html
+        link_blog: /blog/duyhungnguyen.html
+        link_icon: /assets/img/members/duyhungnguyen.jpg
+      - name: Tien Dat Dinh
+        skills: Python, Java, Php
+        link_cv_pdf: /members/tiendatdinh/cv-pdf.html
+        link_cv_web: /members/tiendatdinh/cv-web.html
+        link_blog: /blog/tiendatdinh.html
+        link_icon: /assets/img/members/tiendatdinh.jpg
+
+  - title: Core Members
+    values:
+      - name: Cuong Bui
+        skills: Python, Java, Php
+        link_cv_pdf: /members/cuongbui/cv-pdf.html
+        link_cv_web: /members/cuongbui/cv-web.html
+        link_blog: /blog/cuongbui.html
+        link_icon: /assets/img/members/cuongbui.jpg
+
+outside_collaborators:
+  - title: Outside Collaborators (Team A)
+    values:
+      - name: Green Arrow
+        position: Prof.
+        university: University of the world
+        link_website: https://www.dccomics.com/characters/green-arrow
+        country: USA
+        major: Shot Arrow, Criminal Arrest
+        motto: You have failed this city.
+      - name: Joker
+        position: Prof.
+        university: University of the Gotham
+        link_website: https://www.warnerbros.com/movies/joker
+        country: USA
+        major: committing crimes, kidnapping, murdering, robbing
+        motto: Is it just me or everything is getting crazier out there.
+
+  - title: Outside Collaborators (Team B)
+    values:
+      - name: Deathstroke
+        position: Prof.
+        link_website: https://www.dccomics.com/characters/deathstroke
+        university: University of the Gotham
+        country: USA
+        major: assassin, killer, archer, one-shot
+        motto:  never miss
+      - name: Batman
+        position: Prof.
+        link_website: https://www.dccomics.com/characters/batman
+        university: University of the Gotham
+        country: USA
+        major: hero, save people
+        motto: It's not who I am underneath, but what I do that defines me.
