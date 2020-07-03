@@ -1,7 +1,7 @@
 ---
 layout: cv/cv_mine
 title: Dinh Tien Dat's CV
-permalink: /members/tiendatdinh/cv-web.html
+permalink: /members/dinhtiendat/cv-web.html
 
 name: Tien Dat Dinh
 position: Master of Science

@@ -21,10 +21,10 @@ core_members:
         link_icon: /assets/img/members/duyhungnguyen.jpg
       - name: Tien Dat Dinh
         skills: Python, Java, Php
-        link_cv_pdf: /members/tiendatdinh/cv-pdf.html
-        link_cv_web: /members/tiendatdinh/cv-web.html
-        link_blog: /blog/tiendatdinh.html
-        link_icon: /assets/img/members/tiendatdinh.jpg
+        link_cv_pdf: /members/dinhtiendat/cv-pdf.html
+        link_cv_web: /members/dinhtiendat/cv-web.html
+        link_blog: /blog/dinhtiendat.html
+        link_icon: /assets/img/members/dinhtiendat.jpg
 
   - title: Core Members
     values:
@@ -34,6 +34,12 @@ core_members:
         link_cv_web: /members/cuongbui/cv-web.html
         link_blog: /blog/cuongbui.html
         link_icon: /assets/img/members/cuongbui.jpg
+      - name: Pham Ngoc Lam
+        skills: Python, Java, Php
+        link_cv_pdf: /members/cuongbui/cv-pdf.html
+        link_cv_web: /members/cuongbui/cv-web.html
+        link_blog: /blog/LamKid.html
+        link_icon: /assets/img/members/LamKid.jpg
 
 outside_collaborators:
   - title: Outside Collaborators (Team A)
