@@ -12,7 +12,9 @@ body {
 
 .center_image {
 	margin: 0 auto;
-	display: block;
+	display: block!important;
+	max-width: 100%;
+	height: auto;
 }
 
 canvas {
