@@ -4,9 +4,13 @@ layout: post
 author: thieunguyen5991
 categories: [introduction, testing]
 ---
-## Lorem ipsum dolor sit amet
+### Lorem ipsum dolor sit amet
 
-Lorem ipsum dolor sit amet ut paulo aperiam signiferumque quo. Quaeque pertinacia mnesarchum te vel. Ei tollit habemus delectus mel, pro zril cetero adipiscing an. Eius aliquip legimus ad mea, vix te quod eripuit, munere doctus oporteat qui te. Dolore fierent nam ea. Eos ex tale commune moderatius, ei mel malorum suscipit neglegentur. Has quod falli alienum ne.
+Lorem ipsum dolor sit amet ut paulo aperiam signiferumque quo. Quaeque pertinacia mnesarchum te vel. 
+<!--more-->
+
+Ei tollit habemus delectus mel, pro zril cetero adipiscing an. Eius aliquip legimus ad mea, vix te quod eripuit, munere doctus oporteat qui te. Dolore fierent nam ea. Eos ex tale commune moderatius, ei mel malorum suscipit neglegentur. Has quod falli alienum ne.
+
 
 ### Wisi impedit albucius cum no
 

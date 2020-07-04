@@ -111,7 +111,7 @@ include:
   - .htaccess
 
 markdown: kramdown
-
+excerpt_separator: "<!--more-->"
 
 
 

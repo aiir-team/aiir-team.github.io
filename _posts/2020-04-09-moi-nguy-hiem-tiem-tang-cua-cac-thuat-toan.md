@@ -7,6 +7,7 @@ categories: [security, algorithm]
 ---
 
 Hôm nay tôi mới tìm ra nguyên nhân dẫn đến 1 con bug mà tôi đau đầu trong suốt mấy ngày. Con bug này xuất hiện trong chương trình mô phỏng sự hoạt động của các thuật toán định tuyến trong Mạng liên kết nói riêng và trong Lý thuyết đồ thị nói chung.
+<!--more-->
 
 Thật ra con bug này ko chỉ ảnh hưởng đến 1 thuật toán định tuyến, mà nó ảnh hưởng đến 1 họ các thuật toán định tuyến Grid mà tôi đã nghiên cứu cùng Sư Phụ nhiều năm. Và tôi cũng mới chỉ tìm ra được nguyên nhân dẫn đến con bug này và fix tạm thời một cách qua loa để chương trình chạy được; còn nếu muốn fix triệt để thì chắc sẽ cần mò mẫm sâu thêm.
 

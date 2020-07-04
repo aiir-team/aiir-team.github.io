@@ -10,7 +10,7 @@ permalink: /blog.html
             <div class="col-12 col-md-6">
                 <div class="contributors_wrapper">
                     <div class="contributors_header">
-                        <h3>Top Contributors</h3>
+                        <h1>Top Contributors</h1>
                     </div>
                     <div class="contributors_block">
                         <canvas id="canvas_contributors"></canvas>
@@ -20,7 +20,7 @@ permalink: /blog.html
             <div class="col-12 col-md-6">
                 <div class="categories_wrapper">
                     <div class="categories_header">
-                        <h3>Top Categories</h3>
+                        <h1>Top Categories</h1>
                     </div>
                 </div>
                 <div class="categories_block">
@@ -32,11 +32,11 @@ permalink: /blog.html
     <div id="main_post_latest">
         <div class="row">
             <div class="col-12">
-                <h3>Latest Posts</h3>
+                <h1>Latest Posts</h1>
                 <ul>
                     {% for post in site.posts %}
                     <li>
-                        <h4><a href="{{ post.url }}">{{ post.title }}</a></h4>
+                        <h3><a class="post_title" href="{{ post.url }}">{{ post.title }}</a></h3>
                         {{ post.excerpt }}
                     </li>
                     {% endfor %}
