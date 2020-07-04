@@ -6,11 +6,11 @@ tags: [it, programmer]
 categories: [life]
 ---
 
-### Testing LamTo.
-Hôm qua, Sư Phụ hẹn tôi lên nói chuyện về dự định đồ án cũng như nghiên cứu. Đồ án thì xong từ thời cổ lỗ sĩ rồi, chủ yếu là công việc nghiên cứu. Ngoài ra cũng có mấy cậu sv năm cuối được hẹn lên gặp để làm đồ án tốt nghiệp. Qua cuộc nói chuyện giữa Sư Phụ và các cậu sv đó, Sư Phụ đã chỉ ra 2 sai lầm của mọi người về mặt tư tưởng rằng:
+Hôm qua, Sư Phụ hẹn tôi lên nói chuyện về dự định đồ án cũng như nghiên cứu. Đồ án thì xong từ thời  cổ lỗ sĩ rồi, chủ yếu là công việc nghiên cứu. Ngoài ra cũng có mấy cậu sv năm cuối được hẹn lên gặp để làm đồ án tốt nghiệp. Qua cuộc nói chuyện giữa Sư Phụ và các cậu sv đó, Sư Phụ đã chỉ ra 2 sai lầm của mọi người về mặt tư tưởng rằng:
 AI/Machine Learning cũng chỉ là 1 phần trong 1 kỹ sư thôi, và cũng ko phải là phần cốt lõi tạo nên chất của kỹ sư đó! Đừng vì nó hot mà cố tìm cách sử dụng nó để tạo ra thứ mà ko ai cần!
 Kỹ sư ko phải loại người mà hầu hết xã hội (thị trường lao động) đang nghĩ! Quá lạm dụng từ "kỹ sư" đẫn đến xã hội hiểu và đánh giá sai vai trò của 1 người thực sự là kỹ sư.
 Về điều đầu tiên, hiển nhiên rồi! Trong vài năm gần đây, AI (Artificial Intelligence) - hay còn gọi là "trí tuệ nhân tạo" - là từ khóa hot nhất trong ngành. Hot đến nỗi các bác nông dân ở quê cũng biết có thuật ngữ này tồn tại. Nhưng thật sự thì như vậy là hay? Ko, chả hay ho con khỉ j cả! Khi 1 chủ đề mà được lan tỏa bởi những người ko hiểu biết thật sự về nó, thì sẽ xảy ra hiện tượng "tam sao thất bản". Y hệt như hiện tượng vanishing gradient hay exploding gradient hay xảy ra trong quá trình gradient propagation khi ta huấn luyện mạng nơ-ron vậy.
+<!--more-->
 
 AI là 1 khái niệm quá lớn, tôi chưa đủ hiểu để diễn tả 1 cách ngắn gọn dễ hiểu cho các bạn. Tôi chỉ biết vài nhánh của nó như Computer Vision (thị giác máy tính), Natural Language Processing (xử lý ngôn ngữ tự nhiên). Còn Machine Learning cũng chỉ là 1 kỹ thuật có thể được sử dụng trong các nhánh đó. Ví dụ, ta còn có thể sử dụng 1 kỹ thuật khác là Digital Signal Processing (xử lý tín hiệu số), chứ đâu nhất thiết là cứ phải có Machine Learning đâu! Ảnh hay âm thanh cũng đều có thể biểu diễn dưới dạng tín hiệu số. Ảnh thì đương nhiên rồi; âm thanh thì ban đầu thu được ở dạng tín hiệu tương tự (analog signal), sau đó được số hóa để đưa về tín hiệu số (digital signal). Hoàn toàn chưa cần đến các kỹ thuật Machine Learning, người ta cũng có thể giải quyết được cơ số công việc bằng Digital Signal Processing rồi!
 
